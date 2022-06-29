@@ -3,7 +3,7 @@ module.exports = {
   run: async (toolbox) => {
     const { print: { info }, filesystem, system, meta, parameters, strings } = toolbox
 
-    // debug?
+    // debug
     const debug = Boolean(parameters.options.debug)
     let log = (m) => {
       if (debug) info(m)
@@ -19,7 +19,7 @@ module.exports = {
       onProgress: (out) => {
         out = log(out.toString())
 
-        if (out.includes("Welcome to React Native!")) info(`🖨  3D-printing a new React Native app`)
+        if (out.includes("Welcome to React Native!")) info(`🍽  Creating a new React Native app`)
         if (out.includes("Run instructions for")) info(`🧊 Cooling print nozzles`)
       },
     })
