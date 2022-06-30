@@ -2,20 +2,22 @@ module.exports = {
   name: 'generate',
   alias: ['g'],
   run: async (toolbox) => {
-    const {
-      parameters,
-      template: { generate },
-      print: { info },
-    } = toolbox
+    const {parameters,template: { generate },print: { info, checkmark }} = toolbox
 
-    const name = parameters.first
+    const comands = parameters?.first?.toLowerCase()
+    const name = parameters?.second
 
-    await generate({
-      template: 'model.js.ejs',
-      target: `models/${name}-model.js`,
-      props: { name },
-    })
-
-    info(`Generated file at models/${name}-model.js`)
+    switch(comands){
+      case 'container': {
+        await generate({
+          template: 'container.js.ejs',
+          target: `src/Containers/${name}.js`,
+          props: { name }
+        })
+        info(`${checkmark} src/Containers/${name}.js`)
+        break;
+      }
+    }
   },
 }
+

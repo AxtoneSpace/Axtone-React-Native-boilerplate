@@ -1,9 +1,11 @@
+const { axtoneMark, axtoneComandList } = require("../utils/cosmetic")
 const command = {
   name: 'axtone',
   run: async (toolbox) => {
     const { print } = toolbox
 
-    print.info('Welcome to your CLI')
+    print.info(axtoneMark())
+    print.info(axtoneComandList());
   },
 }
 
