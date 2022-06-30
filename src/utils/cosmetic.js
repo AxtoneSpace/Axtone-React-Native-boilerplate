@@ -4,7 +4,7 @@ const { cyan, gray, white, bold, red, yellow } = print.colors
 
 const infomark = (
 "         _____   ___\n"+
-`        /     + /  /   | ${bold(red("Welcome To Axtone Boilerplaten 🔥"))} \n`+
+`        /     + /  /   | ${bold(red("Welcome To Axtone Boilerplate 🔥"))} \n`+
 `       /  / +  /  /    | ${cyan("The Expressive Boilerplate For React Native")} \n`+
 "      /  /   +/  +     | \n"+
 "     /  /____/  / +    | Github : https://github.com/Anggasayogo/axtone\n"+
@@ -12,8 +12,8 @@ const infomark = (
 "   /  /    /  /  +  +  | \n");
 
 const comadList = (
-    `Example : ${yellow('axtone g conatiner HomeContainer')} For Generating Conatiner \n`+
-    `- axtone g conatiner => Generating your container\n`+
+    `Example : ${yellow('axtone g container HomeContainer')} For Generating Container \n`+
+    `- axtone g container => Generating your container\n`+
     `- axtone g atome => Generating your Atome Components\n`+
     `- axtone g molecule => Generating your Molecule Components\n`+
     `- axtone g organizm => Generating your Organizm Components\n`+
