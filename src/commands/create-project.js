@@ -11,13 +11,16 @@ module.exports = {
     }
     
     const axtoneTemplatePath = filesystem?.path(`${meta?.src}`,'..');
-    const generateProject = `npx react-native init ${parameters.first} --template ${axtoneTemplatePath}`;
+    const generateProject = `npx react-native init ${parameters.first} --template https://github.com/Anggasayogo/axtone.git`;
     
     // generate the project
     await spawnProgress(log(generateProject), {
       env: '',
       onProgress: (out) => {
         info(out.toString())
+
+        if (out.includes("Welcome to React Native!")) info(`🍽  Creating a new React Native app`)
+        if (out.includes("Run instructions for")) info(`🧊 Cooling print nozzles`)
       },
     })
   },
