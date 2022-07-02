@@ -14,9 +14,9 @@ const infomark = (
 const comadList = (
     `Example : ${yellow('axtone g container HomeContainer')} For Generating Container \n`+
     `- axtone g container => Generating your container\n`+
-    `- axtone g atome => Generating your Atome Components\n`+
+    `- axtone g atom => Generating your Atome Components\n`+
     `- axtone g molecule => Generating your Molecule Components\n`+
-    `- axtone g organizm => Generating your Organizm Components\n`+
+    `- axtone g organism => Generating your Organizm Components\n`+
     `- axtone g redux => Generating Redux State\n`+
     `- axtone g sagas => Generating Saga Midleware\n`
 );
