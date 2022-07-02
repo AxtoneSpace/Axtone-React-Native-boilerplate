@@ -12,6 +12,8 @@ target 'AwesomeProject' do
     :hermes_enabled => false
   )
 
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+
   target 'AwesomeProjectTests' do
     inherit! :complete
     # Pods for testing

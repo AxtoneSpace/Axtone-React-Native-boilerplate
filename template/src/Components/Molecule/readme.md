@@ -1,0 +1,2 @@
+# Molecule
+Molecules are groups of two or more atoms held together by chemical bonds. These combinations of atoms take on their own unique properties, and become more tangible and operational than atoms.
