@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "gluegun": "latest",
+    "gluegun": "^5.1.2",
     "ora": "^6.1.2"
   },
   "devDependencies": {
