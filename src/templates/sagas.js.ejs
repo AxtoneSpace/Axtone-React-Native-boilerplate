@@ -1,0 +1,20 @@
+import {call, put, takeLatest} from 'redux-saga/effects';
+import { API } from '../../Services/ApiServices';
+import { Types } from '../Constans';
+import { <%= props.name %>Actions } from "../Redux/<%= props.name %>Reducer";
+
+
+function* do<%= props.name %>(data) {
+    try {
+      const {payload} = data;
+      const response = yield call(API.post, URL.login, payload);
+
+      yield put(<%= props.name %>Actions.doStaticSuccess(response.data));
+    } catch (error) {
+      yield put(<%= props.name %>Actions.doStaticFailure([]));
+    }
+}
+
+export default function* actionWatch<%= props.name %>() {
+    yield takeLatest(Types.STATIC_REQUEST, do<%= props.name %>);
+}

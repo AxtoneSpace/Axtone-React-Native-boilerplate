@@ -18,6 +18,7 @@ module.exports = {
           target: `src/Containers/${name}Screen.js`,
           props: { name },
         })
+
         info(`${checkmark} src/Containers/${name}Screen.js`)
         break
       }
@@ -32,7 +33,9 @@ module.exports = {
           target: `src/Components/Molecule/${name}/styles.js`,
           props: { name },
         })
+
         info(`${checkmark} src/Components/Molecule/${name}/${name}Molecule.js`)
+        info(`${checkmark} src/Components/Molecule/${name}/styles.js`)
         break
       }
       case 'redux': {
@@ -41,7 +44,14 @@ module.exports = {
           target: `src/Store/Redux/${name}Reducer.js`,
           props: { name },
         })
+        await generate({
+          template: 'sagas.js.ejs',
+          target: `src/Store/Sagas/${name}Sagas.js`,
+          props: { name },
+        })
+
         info(`${checkmark} src/Store/Redux/${name}Reducer.js`)
+        info(`${checkmark} src/Store/Sagas/${name}Sagas.js`)
         break
       }
     }

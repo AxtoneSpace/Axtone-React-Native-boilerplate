@@ -7,8 +7,8 @@ const infomark = (
 `        /     + /  /   | ${bold(red("Welcome To Axtone Boilerplate 🔥"))} \n`+
 `       /  / +  /  /    | ${cyan("The Expressive Boilerplate For React Native")} \n`+
 "      /  /   +/  +     | \n"+
-"     /  /____/  / +    | Github : https://github.com/Anggasayogo/axtone\n"+
-"    /  _____/  /+  +   | Issue  : https://github.com/Anggasayogo/axtone/issues\n"+
+"     /  /____/  / +    | Github : AxtoneSpace/Axtone-React-Native-boilerplate\n"+
+"    /  _____/  /+  +   | Issue  : AxtoneSpace/Axtone-React-Native-boilerplate/issues\n"+
 "   /  /    /  /  +  +  | \n");
 
 const comadList = (
@@ -17,8 +17,7 @@ const comadList = (
     `- axtone g atom => Generating your Atom Components\n`+
     `- axtone g molecule => Generating your Molecule Components\n`+
     `- axtone g organism => Generating your Organism Components\n`+
-    `- axtone g redux => Generating Redux State\n`+
-    `- axtone g sagas => Generating Saga Midleware\n`
+    `- axtone g redux => Generating Redux State & Saga Midleware\n`
 );
 
 const axtoneMark = () => {
