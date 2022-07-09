@@ -35,6 +35,15 @@ module.exports = {
         info(`${checkmark} src/Components/Molecule/${name}/${name}Molecule.js`)
         break
       }
+      case 'redux': {
+        await generate({
+          template: 'redux.js.ejs',
+          target: `src/Store/Redux/${name}Reducer.js`,
+          props: { name },
+        })
+        info(`${checkmark} src/Store/Redux/${name}Reducer.js`)
+        break
+      }
     }
   },
 }

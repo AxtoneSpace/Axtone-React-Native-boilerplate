@@ -1,0 +1,48 @@
+import { Types } from "../Constans";
+
+export const <%= props.name %>Actions = {
+    doStaticRequest: data => ({
+        type: Types.STATIC_REQUEST,
+        payload: data,
+    }),
+    doStaticSuccess: data => ({
+        type: Types.STATIC_SUCCESS,
+        payload: data,
+    }),
+    doStaticFailure: error => ({
+        type: Types.STATIC_FAILURE,
+        error,
+    })
+}
+
+const initialState = {
+    mystate: {data: [], fetching: false, error: null}
+}
+
+export const <%= props.name %>Selector = {
+    getStaticCredent: state => state.<%= props.name %>Reducer.mystate,
+}
+
+const <%= props.name %>Reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case Types.STATIC_REQUEST:
+          return {
+            ...state,
+            mystate: {data: [], fetching: true, error: null},
+          };
+        case Types.STATIC_SUCCESS:
+          return {
+            ...state,
+            mystate: {data: action.payload, fetching: false, error: null},
+          };
+        case Types.STATIC_FAILURE:
+          return {
+            ...state,
+            mystate: {data: [], fetching: false, error: action.error},
+          };
+        default:
+          return state;
+    }
+}
+
+export default <%= props.name %>Reducer;

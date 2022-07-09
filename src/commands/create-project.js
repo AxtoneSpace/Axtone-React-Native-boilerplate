@@ -18,7 +18,7 @@ module.exports = {
     }
 
     const axtoneTemplatePath = filesystem?.path(`${meta?.src}`, '..')
-    const generateProject = `npx react-native init ${parameters.first} --template https://github.com/Anggasayogo/axtone.git`
+    const generateProject = `npx react-native init ${parameters.first} --template https://github.com/AxtoneSpace/Axtone-React-Native-boilerplate.git`
 
     // generate the project
     await spawnProgress(log(generateProject), {
