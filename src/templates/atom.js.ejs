@@ -1,0 +1,15 @@
+import { View, Text } from 'react-native'
+import React, {memo}  from 'react'
+
+import styles from './styles.js'
+
+const <%= props.name %> = props => {
+  return (
+    <View style={styles.container}>
+      <Text><%= props.name %> Atom</Text>
+    </View>
+  )
+}
+
+
+export default memo(<%= props.name %>)
