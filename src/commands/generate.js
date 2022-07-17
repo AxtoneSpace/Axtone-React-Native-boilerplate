@@ -1,4 +1,11 @@
-const { generateContainer } = require('../utils/generator')
+const {
+  generateContainer,
+  generateAtom,
+  generateMolecule,
+  generateOrganism,
+  generateRedux,
+  generateNotFound,
+} = require('../utils/generator')
 
 module.exports = {
   name: 'generate',
@@ -15,72 +22,27 @@ module.exports = {
 
     switch (comands) {
       case 'container': {
-        await generateContainer(name, toolbox);
-        break;
+        await generateContainer(name, toolbox)
+        break
       }
       case 'atom': {
-        await generate({
-          template: 'atom.js.ejs',
-          target: `src/Components/Atom/${name}/${name}Atom.js`,
-          props: { name },
-        })
-        await generate({
-          template: 'styles.js.ejs',
-          target: `src/Components/Atom/${name}/styles.js`,
-          props: { name },
-        })
-
-        info(`${checkmark} src/Components/Atom/${name}/${name}Atom.js`)
-        info(`${checkmark} src/Components/Atom/${name}/styles.js`)
+        await generateAtom(name, toolbox)
         break
       }
       case 'molecule': {
-        await generate({
-          template: 'molecules.js.ejs',
-          target: `src/Components/Molecule/${name}/${name}Molecule.js`,
-          props: { name },
-        })
-        await generate({
-          template: 'styles.js.ejs',
-          target: `src/Components/Molecule/${name}/styles.js`,
-          props: { name },
-        })
-
-        info(`${checkmark} src/Components/Molecule/${name}/${name}Molecule.js`)
-        info(`${checkmark} src/Components/Molecule/${name}/styles.js`)
+        await generateMolecule(name, toolbox)
         break
       }
       case 'organism': {
-        await generate({
-          template: 'organism.js.ejs',
-          target: `src/Components/Organism/${name}/${name}Organism.js`,
-          props: { name },
-        })
-        await generate({
-          template: 'styles.js.ejs',
-          target: `src/Components/Organism/${name}/styles.js`,
-          props: { name },
-        })
-
-        info(`${checkmark} src/Components/Organism/${name}/${name}Organism.js`)
-        info(`${checkmark} src/Components/Organism/${name}/styles.js`)
+        await generateOrganism(name, toolbox)
         break
       }
       case 'redux': {
-        await generate({
-          template: 'redux.js.ejs',
-          target: `src/Store/Redux/${name}Reducer.js`,
-          props: { name },
-        })
-        await generate({
-          template: 'sagas.js.ejs',
-          target: `src/Store/Sagas/${name}Sagas.js`,
-          props: { name },
-        })
-
-        info(`${checkmark} src/Store/Redux/${name}Reducer.js`)
-        info(`${checkmark} src/Store/Sagas/${name}Sagas.js`)
+        await generateRedux(name, toolbox)
         break
+      }
+      default: {
+        await generateNotFound(toolbox)
       }
     }
   },
