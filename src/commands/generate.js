@@ -1,3 +1,5 @@
+const { generateContainer } = require('../utils/generator')
+
 module.exports = {
   name: 'generate',
   alias: ['g'],
@@ -13,14 +15,8 @@ module.exports = {
 
     switch (comands) {
       case 'container': {
-        await generate({
-          template: 'container.js.ejs',
-          target: `src/Containers/${name}Screen.js`,
-          props: { name },
-        })
-
-        info(`${checkmark} src/Containers/${name}Screen.js`)
-        break
+        await generateContainer(name, toolbox);
+        break;
       }
       case 'atom': {
         await generate({
