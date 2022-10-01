@@ -1,5 +1,3 @@
-import AvatarCardList from "./Organism/avatarcardlist/AvatarCardList";
+import AvatarCardList from './Organism/avatarcardlist/AvatarCardList';
 
-export {
-    AvatarCardList
-}
+export {AvatarCardList};

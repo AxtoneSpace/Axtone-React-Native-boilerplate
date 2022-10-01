@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
-import storeConfig from './Store'
-import { Provider } from 'react-redux'
+import React, {useEffect} from 'react';
+import storeConfig from './Store';
+import {Provider} from 'react-redux';
 import AppNavigations from './Navigations/AppNavigations';
 import {PersistGate} from 'redux-persist/integration/react';
 
@@ -21,7 +21,7 @@ const App = () => {
         <AppNavigations />
       </PersistGate>
     </Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

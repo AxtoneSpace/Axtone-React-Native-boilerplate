@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import AuthReducer from './AuthReducer';
+import SwitchLangReducer from './SwitchLangReducer';
 
 const rootReducer = combineReducers({
-    AuthReducer,
+  AuthReducer,
+  SwitchLangReducer,
 });
-  
+
 export default rootReducer;
