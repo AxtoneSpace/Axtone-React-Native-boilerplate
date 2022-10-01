@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anggasayogo/axtone.git"
+    "url": "git+git@github.com:AxtoneSpace/Axtone-React-Native-boilerplate.git"
   },
   "scripts": {
     "format": "eslint \"**/*.{js,jsx}\" --fix && prettier \"**/*.{js,jsx,json}\" --write",

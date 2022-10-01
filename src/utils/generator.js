@@ -99,19 +99,10 @@ const generateRedux = async (filename, toolbox) => {
   info(`${checkmark} src/Store/Sagas/${filename}Sagas.js`)
 }
 
-const generateNotFound = async (toolbox) => {
-  const {
-    print: { info },
-  } = toolbox
-
-  info(`Sorry, command not found :(`)
-}
-
 module.exports = {
   generateContainer,
   generateAtom,
   generateMolecule,
   generateOrganism,
   generateRedux,
-  generateNotFound,
 }
