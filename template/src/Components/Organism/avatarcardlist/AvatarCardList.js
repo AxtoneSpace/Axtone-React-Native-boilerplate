@@ -1,25 +1,25 @@
-import { FlatList,View } from 'react-native'
-import React, { memo } from 'react'
-import { AvatarCard } from '../../Molecule'
-import { styles } from './styles'
+import {FlatList, View} from 'react-native';
+import React, {memo} from 'react';
+import {AvatarCard} from '../../Molecule';
+import {styles} from './styles';
 
-const AvatarCardList = (props) => {
-  const { data } = props
+const AvatarCardList = props => {
+  const {data} = props;
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({ item }) =>{
-          return(
+        renderItem={({item}) => {
+          return (
             <View style={styles.contain}>
               <AvatarCard data={item} />
             </View>
-          )
+          );
         }}
       />
     </View>
-  )
-}
+  );
+};
 
-export default memo(AvatarCardList)
+export default memo(AvatarCardList);
