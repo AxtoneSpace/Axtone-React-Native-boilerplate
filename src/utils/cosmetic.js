@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const { print } = require("gluegun/print")
 
 const { cyan, gray, white, bold, red, yellow } = print.colors
@@ -46,5 +47,5 @@ module.exports = {
   command,
   textWarning,
   textInfo,
-  textWhite
+  textWhite,
 }

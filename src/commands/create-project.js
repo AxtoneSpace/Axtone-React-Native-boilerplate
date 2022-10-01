@@ -1,4 +1,5 @@
 const { spawnProgress } = require('../utils/spawn')
+const { validateProjectName } = require('../utils/validations')
 module.exports = {
   run: async (toolbox) => {
     const {
@@ -17,20 +18,24 @@ module.exports = {
       return m
     }
 
-    const axtoneTemplatePath = filesystem?.path(`${meta?.src}`, '..')
-    const generateProject = `npx react-native init ${parameters.first} --template https://github.com/AxtoneSpace/Axtone-React-Native-boilerplate.git`
-
+    // const axtoneTemplatePath = filesystem?.path(`${meta?.src}`, '..')
     // generate the project
-    await spawnProgress(log(generateProject), {
-      env: '',
-      onProgress: (out) => {
-        info(out.toString())
+    if (validateProjectName(toolbox)) {
+      const generateProject = `npx react-native init ${validateProjectName(
+        toolbox
+      )} --template https://github.com/AxtoneSpace/Axtone-React-Native-boilerplate.git`
 
-        if (out.includes('Welcome to React Native!'))
-          info(`🍽  Creating a new React Native app`)
-        if (out.includes('Run instructions for'))
-          info(`🧊 Cooling print nozzles`)
-      },
-    })
+      await spawnProgress(log(generateProject), {
+        env: '',
+        onProgress: (out) => {
+          info(out.toString())
+
+          if (out.includes('Welcome to React Native!'))
+            info(`🍽  Creating a new React Native app`)
+          if (out.includes('Run instructions for'))
+            info(`🧊 Cooling print nozzles`)
+        },
+      })
+    }
   },
 }
