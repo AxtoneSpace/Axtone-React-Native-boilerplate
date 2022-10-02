@@ -1,6 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
-import I18n from '../../../I18n/i18n';
+import {Text, View} from 'react-native';
 import React, {memo} from 'react';
+import {useTranslation} from 'react-i18next';
 import {Avatar, Button} from '../../Atom';
 import {styles} from './styles';
 
@@ -8,6 +8,7 @@ const Card = props => {
   const {
     data: {name, email, quote},
   } = props;
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <Avatar uris={email} />
@@ -16,7 +17,7 @@ const Card = props => {
         <Text style={styles.quote}>"{quote}"</Text>
         <Button style={styles.button} onPress={() => {}}>
           <View>
-            <Text style={styles.titleBtn}>{I18n.t('addFirend')}</Text>
+            <Text style={styles.titleBtn}>{t('addFirend')}</Text>
           </View>
         </Button>
       </View>
