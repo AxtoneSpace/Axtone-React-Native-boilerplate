@@ -1,14 +1,15 @@
 const { spawnProgress } = require('../utils/spawn')
-const { validateProjectName } = require('../utils/validations')
+const { validateFirstInput } = require('../utils/validations')
+const {
+  project_name_required,
+  error_generate_project,
+} = require('../localization/message.json')
+
 module.exports = {
   run: async (toolbox) => {
     const {
       print: { info },
-      filesystem,
-      system,
-      meta,
       parameters,
-      strings,
     } = toolbox
 
     // debug
@@ -18,11 +19,11 @@ module.exports = {
       return m
     }
 
-    // const axtoneTemplatePath = filesystem?.path(`${meta?.src}`, '..')
     // generate the project
-    if (validateProjectName(toolbox)) {
-      const generateProject = `npx react-native init ${validateProjectName(
-        toolbox
+    if (validateFirstInput(toolbox, project_name_required)) {
+      const generateProject = `npx react-native init ${validateFirstInput(
+        toolbox,
+        error_generate_project
       )} --template https://github.com/AxtoneSpace/Axtone-React-Native-boilerplate.git`
 
       await spawnProgress(log(generateProject), {

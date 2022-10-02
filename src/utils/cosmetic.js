@@ -8,8 +8,8 @@ const infomark = (
 `        /     + /  /   | ${bold(red("Welcome To Axtone Boilerplate 🔥"))} \n`+
 `       /  / +  /  /    | ${cyan("The Expressive Boilerplate For React Native")} \n`+
 "      /  /   +/  +     | \n"+
-"     /  /____/  / +    | Github : AxtoneSpace/Axtone-React-Native-boilerplate\n"+
-"    /  _____/  /+  +   | Issue  : AxtoneSpace/Axtone-React-Native-boilerplate/issues\n"+
+`     /  /____/  / +    | Geting Started : ${yellow("axtone create-project PizzaApp")}\n`+
+"    /  _____/  /+  +   | Github : AxtoneSpace/Axtone-React-Native-boilerplate"+
 "   /  /    /  /  +  +  | \n");
 
 const comadList = (
