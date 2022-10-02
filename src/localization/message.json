@@ -1,0 +1,7 @@
+{
+    "comand_undefined": "🧪 your comand is undifined",
+    "project_name_required": "📦 Project name is required",
+    "error_generate_project": "🚨 Error generate project",
+    "root_directory": "🗂  Please Open Root Project Directory",
+    "comand_notfound": "Sorry, command not found 😢"
+}

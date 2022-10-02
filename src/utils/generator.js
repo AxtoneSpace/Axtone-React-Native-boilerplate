@@ -56,6 +56,7 @@ const generateMolecule = async (filename, toolbox) => {
   )
   info(`${checkmark} src/Components/Molecule/${filename}/styles.js`)
 }
+
 const generateOrganism = async (filename, toolbox) => {
   const {
     template: { generate },
@@ -78,6 +79,7 @@ const generateOrganism = async (filename, toolbox) => {
   )
   info(`${checkmark} src/Components/Organism/${filename}/styles.js`)
 }
+
 const generateRedux = async (filename, toolbox) => {
   const {
     template: { generate },

@@ -1,14 +1,30 @@
-const validateProjectName = (toolbox) => {
+const {
+  root_directory,
+  comand_notfound,
+} = require('../localization/message.json')
+
+const validateFirstInput = (toolbox, message) => {
   const { parameters, print } = toolbox
 
   const projectName = (parameters.first || '').toString()
 
-  if (!parameters.first) {
-    print.error('📦 Project name is required')
+  if (!parameters?.first) {
+    print.error(message)
     return false
   }
 
   return projectName
+}
+
+const validateDontInputFirstParams = (toolbox, message) => {
+  const { parameters, print } = toolbox
+
+  if (parameters?.first?.length > 0) {
+    print.error(message)
+    return false
+  }
+
+  return true
 }
 
 const checkIsDirectoryProject = (toolbox) => {
@@ -17,7 +33,7 @@ const checkIsDirectoryProject = (toolbox) => {
     require(process.cwd() + '/package.json')
     return true
   } catch (error) {
-    print.error('🗂  Please Open Root Project Directory')
+    print.error(root_directory)
     return false
   }
 }
@@ -27,11 +43,12 @@ const generateNotFound = async (toolbox) => {
     print: { info },
   } = toolbox
 
-  info(`Sorry, command not found 😢`)
+  info(comand_notfound)
 }
 
 module.exports = {
-  validateProjectName,
+  validateFirstInput,
   checkIsDirectoryProject,
+  validateDontInputFirstParams,
   generateNotFound,
 }
