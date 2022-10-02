@@ -36,7 +36,7 @@ Assuming you have all the requirements installed, you can run the project by run
 
 - `yarn start` to start the metro bundler, in a dedicated terminal
 - `yarn <platform>` to run the *platform* application (remember to start a simulator or connect a device)
-![Instaled](images/example.jpeg)
+![Instaled](images/example.png)
 ## Story
 Boilerplate This is inspired by several existing boilerplates such as [Ignite](https://github.com/infinitered/ignite),[OsmiCli](https://github.com/OsmiCSX) thanks for inspired
 ## License
