@@ -1,6 +1,6 @@
 {
   "name": "axtone",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Axtone CLI The Expressive Boilerplate for React Native",
   "private": false,
   "bin": {
