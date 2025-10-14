@@ -21,17 +21,16 @@ module.exports = {
 
     // generate the project
     if (validateFirstInput(toolbox, project_name_required)) {
-      const generateProject = `npx react-native init ${validateFirstInput(
+      const generateProject = `npx @react-native-community/cli@latest init ${validateFirstInput(
         toolbox,
         error_generate_project
-      )} --template https://github.com/AxtoneSpace/Axtone-React-Native-boilerplate.git`
+      )} --version 0.76.1 --template ~/Documents/explore/Axtone-React-Native-boilerplate --skip-install`
 
       await spawnProgress(log(generateProject), {
         env: '',
         onProgress: (out) => {
           info(out.toString())
-
-          if (out.includes('Welcome to React Native!'))
+          if (out.includes('Welcome to React Native 0.76.1!'))
             info(`🍽  Creating a new React Native app`)
           if (out.includes('Run instructions for'))
             info(`🧊 Cooling print nozzles`)
