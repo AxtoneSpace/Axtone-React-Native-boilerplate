@@ -1,4 +1,3 @@
-// ReactotronConfig.js
 import Reactotron from 'reactotron-react-native';
 
 if (__DEV__) {
@@ -7,7 +6,6 @@ if (__DEV__) {
   let host = 'localhost';
 
   if (scriptURL) {
-    // Ambil IP host bundler (misal: 192.168.x.x)
     host = scriptURL.split('://')[1].split(':')[0];
   }
 
@@ -19,7 +17,6 @@ if (__DEV__) {
     .useReactNative()
     .connect();
 
-  // Optional: supaya bisa log lewat console.tron.log()
   console.tron = Reactotron;
 
   Reactotron.clear();
