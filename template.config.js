@@ -1,4 +1,5 @@
 module.exports = {
-  placeholderName: 'AwesomeProject',
+  placeholderName: 'AxtoneApp',
+  titlePlaceholder: 'Axtone App',
   templateDir: './template',
 }
